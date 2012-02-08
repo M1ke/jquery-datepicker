@@ -1062,6 +1062,6 @@
 $(document).ready(function(){
 	$('input.date').datePicker({clickInput:true,startDate:'01/01/1970'}).attr('autocomplete','off').each(function(){
 		var placeholder=$(this).attr('placeholder');
-		$(this).attr('placeholder',placeholder+(placeholder.length>0?' - ':'')+'Click for calendar');
+		$(this).attr('placeholder',placeholder+((placeholder && placeholder.length)>0?' - ':'')+'Click for calendar');
 	});
 });
