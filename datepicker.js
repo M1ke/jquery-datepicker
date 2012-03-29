@@ -9,6 +9,7 @@
  * Fixes issues with running under jQuery >= 1.7
  ** Corrects "className" attribute to "class"
  ** Uses $.guid for numbering instead of deprecated $.event.guid
+ ** Added ability to pass "format" parameter to change format of returned date. See Date.js for formatting
  **/
 
 (function($){
@@ -224,6 +225,7 @@
 					verticalOffset		: 0,
 					horizontalOffset	: 0,
 					hoverClass			: 'dp-hover'
+					,format				: 'dd/mm/yyyy'
 				}
 				, s
 			);
@@ -272,7 +274,7 @@
 								'dateSelected',
 								function(e, selectedDate, $td)
 								{
-									this.value = selectedDate.asString();
+									this.value = selectedDate.asString(s.format);
 								}
 							).bind(
 								'change',
