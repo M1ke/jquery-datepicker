@@ -9,7 +9,7 @@
  * Fixes issues with running under jQuery >= 1.7
  ** Corrects "className" attribute to "class"
  ** Uses $.guid for numbering instead of deprecated $.event.guid
- ** We now import the date js file using JSPP
+ ** We can import the date js file using JSPP
  **/
  
 /*> date.js */

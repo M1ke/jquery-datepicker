@@ -1,0 +1,32 @@
+{
+    "name": "jquery/datepicker",
+    "version": "2.0.5",
+    "title": "jQuery/Switch",
+    "author": {
+        "name": "Mike Lehan",
+        "url": "https://github.com/M1ke"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "LICENSE"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.4.4"
+    },
+    "description": "This is an clean, unobtrusive plugin for jQuery which allows you to easily add date inputing functionality to your web forms and pages.",
+    "keywords": [
+        "date",
+        "calendar",
+        "inline",
+        "flexible"
+    ],
+    "homepage": "https://github.com/M1ke/jquery-datepicker",
+    "files": [
+        "datepicker.js",
+        "date.js",
+        "datepicker.css",
+        "datepicker.scss"
+    ]
+}

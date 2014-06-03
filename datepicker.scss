@@ -1,0 +1,134 @@
+/** jquery datepicker **/
+$datePopupBg: #fff !default;
+$datePopupBorder: #000 !default;
+$datePopupColor: #000 !default;
+$dateCalendarBg: #aaa !default;
+$dateHeadBg: #333 !default;
+$dateHeadColor: #fff !default;
+$dateCellBg: #eee !default;
+$dateCellColor: #000 !default;
+$dateCellOtherBg: #aaa !default;
+$dateCellTodayBg: #fff !default;
+$dateCellTodayColor: #000 !default;
+$dateCellSelectedBg: #ff9 !default;
+$dateCellSelectedColor: #000 !default;
+$dateCellSelectedHoverBg: #fef !default;
+$dateCellSelectedHoverColor: #000 !default;
+$dateCellHoverBg: #fff !default;
+$dateCellHoverColor: #000 !default;
+$dateCellDisabledBg: #bbb !default;
+$dateCellDisabledColor: #888 !default;
+
+table.jCalendar {
+	background: $dateCalendarBg; border-collapse: separate; border-spacing: 2px;
+	width: 100%;
+	th {
+		background: $dateHeadBg;
+		color: $dateHeadColor; font-weight: bold;
+		padding: 3px 5px;
+	}
+	td {
+		background: $dateCellBg;
+		color: $dateCellColor; text-align: center;
+		padding: 3px 5px;
+		&.other-month {
+			background: $dateCellOtherBg;
+		}
+		&.today {
+			background: $dateCellTodayBg;
+			color: $dateCellTodayColor;
+		}
+		&.selected {
+			background: $dateCellSelectedBg;
+			color: $dateCellSelectedColor;
+			&:hover {
+				background: $dateCellSelectedHoverBg;
+				color: $dateCellSelectedHoverColor;
+			}
+		}
+		&:hover, &.dp-hover {
+			background: $dateCellHoverBg;
+			color: $dateCellHoverColor;
+		}
+		&.disabled, &.disabled:hover {
+			background: $dateCellDisabledBg;
+			color: $dateCellDisabledColor;
+		}
+	}
+}
+
+/* For the popup */
+
+div.dp-popup {
+	width: 200px; position: relative; padding: 2px;
+	background: $datePopupBg; border: 1px solid $datePopupBorder;
+	font-size: 10px; font-family: arial, sans-serif; color: $datePopupColor; line-height: 1.2em;
+	h2 {
+		font-size: 12px; text-align: center;
+		margin: 2px 0; padding: 0;
+	}
+	a {
+		color: #000; text-decoration: none;
+		padding: 1px 2px 0;
+	}
+	div.dp-title {
+		position: relative;
+	}
+	div.dp-year h2 {
+		padding-top: 3px;
+	}
+	div.dp-nav a {
+		cursor: pointer;
+		&.disabled {
+			cursor: default;
+		}
+	}
+	div.dp-nav {
+		position: absolute; top: 0; width: 100px;
+	}
+	div.dp-nav-prev {
+		left: 4px;
+		a {
+			float: left;
+		}
+	}
+	div.dp-nav-next {
+		right: 4px;
+		a {
+			float: right;
+		}
+	}
+	a.disabled {
+		cursor: default;
+		display: none;
+	}
+	td {
+		cursor: pointer;
+		&.disabled {
+			cursor: default;
+		}
+	}
+}
+div#dp-popup {
+	position: absolute; z-index: 199; width: 200px;
+}
+a#dp-close {
+	font-size: 11px; text-align: center;
+	padding: 4px 0; display: block;
+}
+a#dp-close:hover {
+	text-decoration: underline;
+}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+
+/** extra styling **/
+
+a.dp-choose-date {
+	display: none;
+}
+/* makes the input field shorter once the date picker code
+ * has run (to allow space for the calendar icon
+ */
+input.dp-applied {
+	width: 140px;
+}
