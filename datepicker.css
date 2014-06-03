@@ -44,8 +44,6 @@ table.jCalendar td.disabled, table.jCalendar td.disabled:hover {
 
 /* For the popup */
 
-/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
-
 div.dp-popup {
 	width: 200px;
 	position: relative;
