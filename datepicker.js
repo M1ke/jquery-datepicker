@@ -94,11 +94,12 @@
 			var year = s.year || today.getFullYear();
 			
 
-			// we added the UTC declaration to fix for when clocks go back, however it breaks other timezones
-			// so we need a fix that deals with both
-
 			// var currentDate = new Date(year, month, 1);
+			// to prevent a problem with daylight savings time we need to set the hour to somewhere in the middle of the day
+
 			var currentDate = new Date(year, month, 1, 12);
+
+			// we previously tried to set to UTC but it conflicted in other areas
 			// var currentDate = new Date(Date.UTC(year, month, 1));
 			
 			
