@@ -119,16 +119,11 @@ a#dp-close {
 a#dp-close:hover {
 	text-decoration: underline;
 }
-/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
-
-/** extra styling **/
 
 a.dp-choose-date {
 	display: none;
 }
-/* makes the input field shorter once the date picker code
- * has run (to allow space for the calendar icon
- */
+/* makes the input field shorter once the date picker code has run (to allow space for the calendar icon */
 input.dp-applied {
 	width: 140px;
 }
