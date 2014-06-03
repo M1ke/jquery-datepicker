@@ -1,13 +1,13 @@
-jQuery Datepicker by Kevin Luck (2007)
-http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/index.html
+# jQuery Datepicker
+#### by [Kevin Luck (2007)](http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/index.html)
 
-From website:
+## Summary
+
 "This is an clean, unobtrusive plugin for jQuery which allows you to easily add date inputing functionality to your web forms and pages. Designed from the ground up to be flexible and extensible, the date picker can be used in unlimited ways to allow you to add calendar widgets to your pages."
 
-Amends by Mike Lehan (2012)
+## Amends
+#### by Mike Lehan (2012)
 
 This plugin is a great way to get a quick date picker in jQuery. Unfortunately it stopped working as of jQuery 1.7 because of deprecation of $.event and changes to how class attributes are handled. I have fixed these, and will try and maintain/add to the plugin as I see fit.
 
 I have also added a useful document.ready helper - any input with the class of "date" will change automatically. I will attempt to make further changes so that the plugin works with [type="date"] but this breaks it in some browsers at present.
-
-I forgot to initialise my git repo before making changes, I'll try and make a diff so it is obvious what I've changed.
