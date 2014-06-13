@@ -13,7 +13,7 @@
         }
     ],
     "dependencies": {
-        "jquery": ">=1.4.4"
+        "jquery": "/home/m1ke/web/lib/js/jquery/.git"
     },
     "description": "This is an clean, unobtrusive plugin for jQuery which allows you to easily add date inputing functionality to your web forms and pages.",
     "keywords": [
