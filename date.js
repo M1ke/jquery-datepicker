@@ -408,21 +408,29 @@ Date.fullYearStart = '20';
 	 * @author Kelvin Luck
 	 */
 	add("asString", function(format){
-		var r = format || Date.format;
-		return r
-			.split('yyyy').join(this.getFullYear())
-			.split('yy').join((this.getFullYear() + '').substring(2))
-			.split('mmmm').join(this.getMonthName(false))
-			.split('mmm').join(this.getMonthName(true))
-			.split('mm').join(_zeroPad(this.getMonth()+1))
-			.split('m').join(this.getMonth()+1)
-			.split('dddd').join(this.getDayName(false))
-			.split('ddd').join(this.getDayName(true))
-			.split('dd').join(_zeroPad(this.getDate()))
-			.split('d').join(this.getDate())
-			.split('hh').join(_zeroPad(this.getHours()))
-			.split('min').join(_zeroPad(this.getMinutes()))
-			.split('ss').join(_zeroPad(this.getSeconds()));
+		format=(format || Date.format);
+		var matches=format.match(/(\[[^\[]*\])|(\\)?(min|mm?m?m?|dd?d?d?|yyyy|yy|hh?|ss?|.)/g)
+			,tokens={
+				'yyyy':this.getFullYear(),
+				'yy':(this.getFullYear() + '').substring(2),
+				'mmmm':this.getMonthName(false),
+				'mmm':this.getMonthName(true),
+				'mm':_zeroPad(this.getMonth()+1),
+				'm':this.getMonth()+1,
+				'dddd':this.getDayName(false),
+				'ddd':this.getDayName(true),
+				'dd':_zeroPad(this.getDate()),
+				'd':this.getDate(),
+				'hh':_zeroPad(this.getHours()),
+				'min':_zeroPad(this.getMinutes()),
+				'ss':_zeroPad(this.getSeconds()),
+			};
+		var string='',token='';
+		for (var i=0;i<matches.length;i++){
+			token=matches[i];
+			string+=(tokens[token] || token);
+		}
+		return string;
 	});
 	
 	/**
