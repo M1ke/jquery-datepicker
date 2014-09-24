@@ -452,6 +452,21 @@
 			return _w.call(this, 'setOffset', v, h);
 		},
 /**
+ * Get date format
+ *
+ * @type jQuery
+ * @name dpGetFormat
+ * @cat plugins/datePicker
+ * @author M1ke (http://twitter.com/m1ke)
+ *
+ * @example $('#date-picker').datePicker();
+ * var format=$('#date-picker').dpGetFormat(); // returns e.g. 'dd/mm/yyyy'
+ * @desc Creates a date picker associated with the element with an id of date-picker and makes it so that when this date picker pops up it will be 20 pixels above and 200 pixels to the right of it's default position.
+ **/
+		dpGetFormat : function(){
+			return _w.call(this, 'getForamt', v, h);
+		},
+/**
  * Closes the open date picker associated with this element.
  *
  * @type jQuery
@@ -537,6 +552,9 @@
 				this.context = this.ele;
 				this.display();
 			}
+		},
+		getFormat : function(){
+			return this.format;
 		},
 		setStartDate : function(d){
 			if (d){
