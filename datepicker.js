@@ -464,7 +464,10 @@
  * @desc Creates a date picker associated with the element with an id of date-picker and makes it so that when this date picker pops up it will be 20 pixels above and 200 pixels to the right of it's default position.
  **/
 		dpGetFormat : function(){
-			return _w.call(this, 'getFormat');
+			var c = _getController(this[0]);
+			if (c){
+				return c.getFormat();
+			}
 		},
 /**
  * Closes the open date picker associated with this element.
@@ -535,6 +538,7 @@
 	};
 	$.extend(DatePicker.prototype,{	
 		init : function(s){
+			// likely to be a way we can streamline this...
 			this.setStartDate(s.startDate);
 			this.setEndDate(s.endDate);
 			this.setDisplayedMonth(Number(s.month), Number(s.year));
@@ -548,6 +552,7 @@
 			this.hoverClass = s.hoverClass;
 			this.setOffset(s.verticalOffset, s.horizontalOffset);
 			this.inline = s.inline;
+			this.format = s.format;
 			if (this.inline){
 				this.context = this.ele;
 				this.display();
