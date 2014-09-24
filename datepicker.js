@@ -464,7 +464,7 @@
  * @desc Creates a date picker associated with the element with an id of date-picker and makes it so that when this date picker pops up it will be 20 pixels above and 200 pixels to the right of it's default position.
  **/
 		dpGetFormat : function(){
-			return _w.call(this, 'getForamt', v, h);
+			return _w.call(this, 'getFormat');
 		},
 /**
  * Closes the open date picker associated with this element.
