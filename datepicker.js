@@ -360,7 +360,7 @@
 		dpSetSelected : function(d, v, m){
 			if (v == undefined) v=true;
 			if (m == undefined) m=true;
-			return _w.call(this, 'setSelected', Date.fromString(d), v, m);
+			return _w.call(this, 'setSelected', typeof d=='string' ? Date.fromString(d) : d, v, m);
 		},
 /**
  * Sets the month that will be displayed when the date picker is next opened. If the passed month is before startDate then the month containing startDate will be displayed instead. If the passed month is after endDate then the month containing the endDate will be displayed instead.
