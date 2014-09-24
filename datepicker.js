@@ -224,15 +224,15 @@
 			
 			return this.each(function(){
 				var $this = $(this);
-				var alreadyExists = true;
 				
-				if (!this._dpId){
-					this._dpId = $.guid++;
-					$.event._dpCache[this._dpId] = new DatePicker(this);
-					alreadyExists = false;
-					$(this).data('_dpId',this._dpId);
+				if (this._dpId){
+					return;
+					// too many issues with closures when trying to recreate; just return and add a destroy option
 				}
-				
+				this._dpId = $.guid++;
+				$.event._dpCache[this._dpId] = new DatePicker(this);
+				$(this).data('_dpId',this._dpId);
+			
 				if (s.inline){
 					s.createButton = false;
 					s.displayClose = false;
@@ -243,7 +243,7 @@
 				var controller = $.event._dpCache[this._dpId];
 				controller.init(s);
 				
-				if (!alreadyExists && s.createButton){
+				if (s.createButton){
 					// create it!
 					controller.button = $('<a href="#" class="dp-choose-date" title="' + $.dpText.TEXT_CHOOSE_DATE + '">' + $.dpText.TEXT_CHOOSE_DATE + '</a>').bind('click',function(){
 						$this.dpDisplay(this);
@@ -253,7 +253,7 @@
 					$this.after(controller.button);
 				}
 				
-				if (!alreadyExists && $this.is(':text')){
+				if ($this.is(':text')){
 					$this.bind('dateSelected',function(e, selectedDate, $td){
 						this.value = selectedDate.asString(s.format);
 					}).bind('change',function(){
