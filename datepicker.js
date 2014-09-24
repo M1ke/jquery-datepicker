@@ -552,7 +552,7 @@
 			this.hoverClass = s.hoverClass;
 			this.setOffset(s.verticalOffset, s.horizontalOffset);
 			this.inline = s.inline;
-			this.format = s.format;
+			this.setFormat(s.format);
 			if (this.inline){
 				this.context = this.ele;
 				this.display();
@@ -560,6 +560,9 @@
 		},
 		getFormat : function(){
 			return this.format;
+		},
+		setFormat : function(format){
+			this.format=format;
 		},
 		setStartDate : function(d){
 			if (d){
