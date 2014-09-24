@@ -461,12 +461,20 @@
  *
  * @example $('#date-picker').datePicker();
  * var format=$('#date-picker').dpGetFormat(); // returns e.g. 'dd/mm/yyyy'
- * @desc Creates a date picker associated with the element with an id of date-picker and makes it so that when this date picker pops up it will be 20 pixels above and 200 pixels to the right of it's default position.
+ * @desc Returns the format set on creation
  **/
 		dpGetFormat : function(){
 			var c = _getController(this[0]);
 			if (c){
 				return c.getFormat();
+			}
+		},
+
+		dpSetValue : function(d){
+			var c = _getController(this[0]);
+			if (c){
+				var format=c.getFormat();
+				this[0].value=d.asString(format);
 			}
 		},
 /**
