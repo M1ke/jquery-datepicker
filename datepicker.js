@@ -476,6 +476,7 @@
 				var format=c.getFormat();
 				this[0].value=d.asString(format);
 			}
+			return this;
 		},
 /**
  * Closes the open date picker associated with this element.
