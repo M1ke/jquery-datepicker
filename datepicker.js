@@ -128,7 +128,8 @@
 					var thisMonth = currentDate.getMonth() == month;
 					var d = $(dc('td'))
 						.text(currentDate.getDate() + '')
-						.attr('class', (thisMonth ? 'current-month ' : 'other-month ') +
+						.attr('class', currentDate.asString('yyyy-mm-dd')+' ' +
+										(thisMonth ? 'current-month ' : 'other-month ') +
 										(currentDate.isWeekend() ? 'weekend ' : 'weekday ') +
 										(thisMonth && currentDate.getTime() == today.getTime() ? 'today ' : '')
 						)
