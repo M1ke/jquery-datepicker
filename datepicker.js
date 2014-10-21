@@ -12,7 +12,7 @@
  ** We can import the date js file using JSPP
  **/
  
-/*> date.js */
+/*@include date.js */
 
 (function($){
 	$.fn.extend({
