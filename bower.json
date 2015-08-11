@@ -12,7 +12,7 @@
         }
     ],
     "dependencies": {
-        "jquery": "git@github.com:m1ke/jquery-bower.git"
+        "jquery": "https://github.com/m1ke/jquery-bower.git"
     },
     "description": "This is an clean, unobtrusive plugin for jQuery which allows you to easily add date inputing functionality to your web forms and pages.",
     "keywords": [
