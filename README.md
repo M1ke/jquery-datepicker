@@ -1,5 +1,5 @@
 # jQuery Datepicker
-#### by [Kevin Luck _(2007)_](http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/index.html)
+#### by [Kelvin Luck _(2007)_](http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/index.html)
 
 ## Summary
 
