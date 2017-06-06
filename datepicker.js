@@ -783,6 +783,9 @@
 				if (this.horizontalPosition == $.dpConst.POS_RIGHT){
 					$pop.css('left', eleOffset.left + $ele.outerWidth() - $pop.outerWidth() + c.horizontalOffset);
 				}
+				if (this.horizontalPosition == $.dpConst.POS_CENTER){
+					$pop.css('left', eleOffset.left + $ele.outerWidth()/2 - $pop.outerWidth()/2 + c.horizontalOffset);
+				}
 				$(document).bind('mousedown', this._checkMouse);
 			}
 		},
@@ -950,7 +953,8 @@
 		POS_TOP				:	0,
 		POS_BOTTOM			:	1,
 		POS_LEFT			:	0,
-		POS_RIGHT			:	1
+		POS_RIGHT			:	1,
+		POS_CENTER			:	2
 	};
 	// localisable text
 	$.dpText = {
